@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="cont">
 		<nav class="navbar navbar-light bg-light p-4">
 			<div class="container-fluid">
 				<a class="navbar-brand" onclick="window.location.href='../index.html'">
@@ -43,7 +43,7 @@
         </div>
       </nav>
       <div
-        class="cont cont--start flex-column container-fluid p-3 cont--max-width"
+        class="main cont--start flex-column container-fluid p-3 cont--max-width"
       >
         <h4 class="pt-4 pb-4">Question 1</h4>
         <h2 class="pt-4 pb-5">
@@ -95,14 +95,16 @@
         </div>
       </div>
       <div class="card-footer text-muted p-4 d-flex justify-content-center">
-        <p>
-          <img src="../media/success.png" alt="Ícono respuesta correcta" class="icon" /> Correct answers:
-          <span id="right_answers">0</span>
-        </p>
-        <p>
-          <img src="../media/error.png" alt="Ícono respuesta incorrecta" class="icon" /> Incorrect answers:
-          <span id="wrong_answers">0</span>
-        </p>
+        <div class="score">
+          <p>
+            <img src="../media/success.png" alt="Ícono respuesta correcta" class="icon" /> Correct answers:
+            <span id="right_answers">0</span>
+          </p>
+          <p>
+            <img src="../media/error.png" alt="Ícono respuesta incorrecta" class="icon" /> Incorrect answers:
+            <span id="wrong_answers">0</span>
+          </p>
+        </div>
       </div>
     </div>
     <script>

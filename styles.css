@@ -1,8 +1,11 @@
-body {
-  max-height: 100%;
-  max-width: 100%;
-  min-height: 90vh;
+html, body {
+  height: 100%;
   margin: 0;
+  overflow-y: hidden !important;
+}
+
+* {
+  box-sizing: border-box;
 }
 /* ----------- Buttons styles -------------- */
 
@@ -27,14 +30,27 @@ body {
   padding-left: 10px;
 }
 
+.button--single {
+  height: 50%;
+}
+
 /* ----------- End Buttons styles -------------- */
 
-/* ----------- Container styles styles -------------- */
-/* ----------- Container styles styles -------------- */
-
+/* ----------- Container styles -------------- */
 .cont {
-  min-height: 100%;
+  height: 100%;
+  min-height: 100% !important;
+}
+
+.navbar {
+  min-height: 10% !important;
+  height: 10% !important;
+}
+
+.main {
   display: flex;
+  min-height: 75% !important;
+  height: 75% !important;
 }
 
 .cont--centered {
@@ -51,6 +67,23 @@ body {
   margin: auto;
   max-width: 70%;
 }
+
+.card-footer {
+  height: 15% !important;
+}
+
+.score {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.single-button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+/* ----------- End Container styles -------------- */
 
 /* ----------- Icon styles -------------- */
 
