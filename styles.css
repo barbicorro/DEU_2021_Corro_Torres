@@ -1,7 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  overflow-y: hidden !important;
+  overflow-y: hidden;
 }
 
 * {
@@ -51,19 +51,18 @@ html, body {
 /* ----------- Container styles -------------- */
 .cont {
   height: 100%;
-  min-height: 100% !important;
+  min-height: 100%;
 }
 
 .navbar {
-  min-height: 10% !important;
-  height: 10% !important;
+  min-height: 10%;
+  height: 10%;
 }
 
 .main {
   display: flex;
-  min-height: 70% !important;
-  height: 70% !important;
-  overflow-y: auto;
+  min-height: 70%;
+  height: 70%;
 }
 
 .cont--centered {
@@ -89,7 +88,7 @@ html, body {
 }
 
 .card-footer {
-  height: 20% !important;
+  height: 20%;
 }
 
 .score {
@@ -126,7 +125,7 @@ html, body {
 }
 
 .card:hover {
-  border: 2px solid purple !important;
+  border: 2px solid purple;
   -webkit-transform: scale(1.08);
   transform: scale(1.08);
   -webkit-transition: transform 300ms ease-in-out;
