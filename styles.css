@@ -77,7 +77,14 @@ html, body {
 
 .cont--max-width {
   margin: auto;
-  max-width: 70%;
+  max-width: 80%;
+}
+.card-container {
+  height: 100%;
+}
+
+.card-title {
+  width: 100%;
 }
 
 .card-footer {
@@ -88,6 +95,7 @@ html, body {
   height: 100%;
   display: flex;
   align-items: center;
+  font-weight: 700;
 }
 
 .single-button {
@@ -98,6 +106,11 @@ html, body {
 
 .navbar-brand {
   cursor: pointer;
+}
+
+.option {
+  width: 50%;
+  height: 50%;
 }
 /* ----------- End Container styles -------------- */
 
@@ -113,10 +126,31 @@ html, body {
 
 .card:hover {
   border: 2px solid purple !important;
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  -webkit-transition: transform 300ms ease-in-out;
+  -moz-transition:    transform 300ms ease-in-out;
+  -ms-transition:     transform 300ms ease-in-out;
+  -o-transition:      transform 300ms ease-in-out;
+  transition:         transform 300ms ease-in-out;
+}
+
+.img-container--move-left {
+  margin-right: 5%;
+}
+
+.img-container > .card-img-bottom {
+  width: 35%;
+  margin: 20px auto;
 }
 
 /* ----------- Extra styles -------------- */
 
 .answers-counter {
   font-weight: bold;
+}
+
+.card-title {
+  font-size: 22px;
+  text-align: center;
 }

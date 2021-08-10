@@ -43,33 +43,33 @@
         In case of a flood, which is the most important thing to rescue?
       </h2>
       <div class="row d-flex p-5 cont--centered w-100">
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4 col-sm-12 card-container">
           <button class="card box-shadow p-3" id="option1">
-            <div class="card-body mb-3">
-              <h3 class="card-title text-center">1) Clothes</h3>
+            <div class="card-body mb-3 cont--centered w-100">
+              <h3 class="card-title text-center">Clothes</h3>
             </div>
             <div class="d-flex align-items-center justify-content-center">
-              <img class="card-img-bottom w-75" alt="Ilustración juguetes" src="../media/answers/clothes.png" />
+              <img class="card-img-bottom option" alt="Ilustración juguetes" src="../media/answers/clothes.png" />
             </div>
           </button>
         </div>
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4 col-sm-12 card-container">
           <button class="card box-shadow p-3" id="option2">
-            <div class="card-body mb-3">
-              <h3 class="card-title text-center">2) Books</h3>
+            <div class="card-body mb-3 cont--centered w-100">
+              <h3 class="card-title text-center">Books</h3>
             </div>
             <div class="d-flex align-items-center justify-content-center">
-              <img class="card-img-bottom w-75" alt="Ilustración botella de agua" src="../media/answers/books.png" />
+              <img class="card-img-bottom option" alt="Ilustración botella de agua" src="../media/answers/books.png" />
             </div>
           </button>
         </div>
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4 col-sm-12 card-container">
           <button class="card box-shadow p-3" id="option3">
-            <div class="card-body mb-3">
-              <h3 class="card-title text-center">3) Documentation</h3>
+            <div class="card-body mb-3 cont--centered w-100">
+              <h3 class="card-title text-center">Documentation</h3>
             </div>
             <div class="d-flex align-items-center justify-content-center">
-              <img class="card-img-bottom w-75" alt="Ilustración joystick" src="../media/answers/documentation.png" />
+              <img class="card-img-bottom" alt="Ilustración joystick" src="../media/answers/documentation.png" />
             </div>
           </button>
         </div>
@@ -92,7 +92,7 @@
     ScoreHandler.loadCurrentScore();
     EventsHandler.attachEventsToOptionButtons(2, {
       rightOptionId: 3,
-      wrongOptionsIds: [1,2],
+      wrongOptionsIds: [1, 2],
       isLastOption: true
     })
   </script>

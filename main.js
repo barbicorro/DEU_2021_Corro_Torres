@@ -77,6 +77,20 @@ window.ScoreHandler = {
   loadCurrentScore: function () {
     window.ScoreHandler.loadRightAnswersScore();
     window.ScoreHandler.loadWrongAnswersScore();
+  },
+
+  loadSummaryMessage: function () {
+    const textElement = document.getElementById("summary-message");
+    const RIGHT_ANSWERS = parseInt(window.sessionStorage.getItem("right_answers"));
+    const WRONG_ANSWERS = parseInt(window.sessionStorage.getItem("wrong_answers"));
+
+    if (RIGHT_ANSWERS > WRONG_ANSWERS) {
+      textElement.innerHTML = `Well done!. You have ${RIGHT_ANSWERS} right answers.`
+    } else if (RIGHT_ANSWERS == WRONG_ANSWERS) {
+      textElement.innerHTML = `End of the game!`
+    } else {
+      textElement.innerHTML = `Try again!. You have ${WRONG_ANSWERS} wrong answers.`
+    }
   }
 };
 
@@ -87,7 +101,7 @@ window.UtilsHandler = {
     window.location.href = newURL;
   },
 
-  resetGame: function() {
+  resetGame: function () {
     window.ScoreHandler.clearScore();
     UtilsHandler.changeURL("../index.html");
   }

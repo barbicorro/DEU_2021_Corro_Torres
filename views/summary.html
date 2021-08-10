@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="main cont--centered cont--max-width flex-column">
-        <h1 class="fw-bold">Well done!</h1>
+        <h1 class="fw-bold" id="summary-message">End of the game!</h1>
         <div class="d-flex align-items-center mt-5">
           <img class="m-2" src="../media/success.png" alt="Ícono respuesta correcta" width="30">
           <h2>Correct answers: <span id="right_answers">0</span></h1>
@@ -79,6 +79,7 @@
     </div>
     <script>
       ScoreHandler.loadCurrentScore();
+        ScoreHandler.loadSummaryMessage();
     </script>
   </body>
 
