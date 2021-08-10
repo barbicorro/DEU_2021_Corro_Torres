@@ -61,8 +61,9 @@ html, body {
 
 .main {
   display: flex;
-  min-height: 75% !important;
-  height: 75% !important;
+  min-height: 70% !important;
+  height: 70% !important;
+  overflow-y: auto;
 }
 
 .cont--centered {
@@ -88,7 +89,7 @@ html, body {
 }
 
 .card-footer {
-  height: 15% !important;
+  height: 20% !important;
 }
 
 .score {
@@ -140,8 +141,8 @@ html, body {
 }
 
 .img-container > .card-img-bottom {
-  width: 35%;
-  margin: 20px auto;
+  width: 25%;
+  margin: 15px auto;
 }
 
 /* ----------- Extra styles -------------- */
