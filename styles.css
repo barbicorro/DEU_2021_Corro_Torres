@@ -21,6 +21,18 @@ html, body {
   border-color: blueviolet;
 }
 
+.button--danger {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+.button--danger:hover {
+  color: red;
+  background-color: white;
+  border-color: red;
+}
+
 .button--rounded {
   width: 50px;
   height: 50px;

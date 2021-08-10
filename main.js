@@ -85,6 +85,11 @@ window.UtilsHandler = {
     const baseURL = window.location.href.split('/').slice(0, -1).join('/')
     const newURL = `${baseURL}/${newRelativeURL}`
     window.location.href = newURL;
+  },
+
+  resetGame: function() {
+    window.ScoreHandler.clearScore();
+    UtilsHandler.changeURL("../index.html");
   }
 };
 
