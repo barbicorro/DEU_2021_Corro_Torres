@@ -154,3 +154,15 @@ html, body {
   font-size: 22px;
   text-align: center;
 }
+
+
+@media (max-height: 800px) {
+  .option {
+    width: 35%;
+    height: 35%;
+  }
+  .img-container > .card-img-bottom {
+    width: 17%;
+    margin: 15px auto;
+  }
+}
