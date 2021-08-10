@@ -1,20 +1,12 @@
 window.EventsHandler = {
-  rightChoiceEventTrigger: function (optionId, lastQuestion = false) {
-    if (!lastQuestion) {
-      ScoreHandler.addRightAnswer();
-      UtilsHandler.changeURL(`correct${optionId}.html`);
-    } else {
-      UtilsHandler.changeURL(`summary.html`)
-    }
+  rightChoiceEventTrigger: function (optionId) {
+    ScoreHandler.addRightAnswer();
+    UtilsHandler.changeURL(`correct${optionId}.html`);
   },
 
-  wrongChoiceEventTrigger: function (optionId, lastQuestion = false) {
-    if (!lastQuestion) {
-      ScoreHandler.addWrongAnswer();
-      UtilsHandler.changeURL(`incorrect${optionId}.html`)
-    } else {
-      UtilsHandler.changeURL(`summary.html`)
-    }
+  wrongChoiceEventTrigger: function (optionId) {
+    ScoreHandler.addWrongAnswer();
+    UtilsHandler.changeURL(`incorrect${optionId}.html`)
   },
 
   attachEventsToOptionButtons: function (page, options) {
@@ -112,8 +104,9 @@ window.QuestionsHandler = {
     window.sessionStorage.getItem('current_question');
   },
 
-  setLastQuestion: function (id, answer) {
-    window.sessionStorage.setItem('last_question', { id, answer })
+  setRemainingQuestions: function (questions) {
+    const previousQuantity = window.sessionStorage.setItem('remaining_questions')
+    window.sessionStorage.setItem('remaining_questions')
   },
 
   getLastQuestion: function () {
