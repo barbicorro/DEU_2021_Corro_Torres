@@ -1,64 +1,76 @@
 window.EventsHandler = {
-  rightChoiceEventTrigger: function (optionId) {
-    UtilsHandler.changeURL(`correct${optionId}.html`);
-    ScoreHandler.addRightAnswer();
+  rightChoiceEventTrigger: function (optionId, lastQuestion = false) {
+    if (!lastQuestion) {
+      ScoreHandler.addRightAnswer();
+      UtilsHandler.changeURL(`correct${optionId}.html`);
+    } else {
+      UtilsHandler.changeURL(`summary.html`)
+    }
   },
 
-  wrongChoiceEventTrigger: function (optionId) {
-    UtilsHandler.changeURL(`incorrect${optionId}.html`)
-    ScoreHandler.addWrongAnswer();
+  wrongChoiceEventTrigger: function (optionId, lastQuestion = false) {
+    if (!lastQuestion) {
+      ScoreHandler.addWrongAnswer();
+      UtilsHandler.changeURL(`incorrect${optionId}.html`)
+    } else {
+      UtilsHandler.changeURL(`summary.html`)
+    }
   },
 
   attachEventsToOptionButtons: function (page, options) {
-    const { rightOptionId, wrongOptionsIds } = options;
+    const { rightOptionId, wrongOptionsIds, isLastOption = false } = options;
 
 
     for (const wrongOptionId of wrongOptionsIds) {
       const optionButton = document.getElementById(`option${wrongOptionId}`);
       optionButton.addEventListener('click', function () {
-        window.EventsHandler.wrongChoiceEventTrigger(wrongOptionId);
+        window.EventsHandler.wrongChoiceEventTrigger(page, isLastOption);
       });
     }
-    document.getElementById(`option${rightOptionId}`).addEventListener('click', function () {
-      window.EventsHandler.rightChoiceEventTrigger(rightOptionId);
+
+    const rightOptionButton = document.getElementById(`option${rightOptionId}`);
+    rightOptionButton.addEventListener('click', function () {
+      window.EventsHandler.rightChoiceEventTrigger(page, isLastOption);
     });
   }
 };
 
 window.ScoreHandler = {
   clearScore: function () {
-    localStorage.clear()
-    localStorage.setItem('wrong_answers', 0);
-    localStorage.setItem('right_answers', 0);
+    window.sessionStorage.clear()
+    window.sessionStorage.setItem('wrong_answers', 0);
+    window.sessionStorage.setItem('right_answers', 0);
   },
 
   addWrongAnswer: function () {
-    localStorage.setItem('wrong_answers', parseInt(localStorage.getItem('wrong_answers')) + 1);
+    const previousScore = parseInt(window.sessionStorage.getItem('wrong_answers'));
+    window.sessionStorage.setItem('wrong_answers', previousScore + 1);
   },
 
   addRightAnswer: function () {
-    localStorage.setItem('wrong_answers', parseInt(localStorage.getItem('wrong_answers')) + 1);
+    const previousScore = parseInt(window.sessionStorage.getItem('right_answers'));
+    window.sessionStorage.setItem('right_answers', previousScore + 1);
   },
 
-  substractWrongAnswer: function () {
-    const previousScore = parseInt(localStorage.getItem('wrong_answers'))
-    localStorage.setItem('wrong_answers', previousScore > 0 ? previousScore - 1 : 0);
-  },
+  // substractWrongAnswer: function () {
+  //   const previousScore = window.sessionStorage.getItem('wrong_answers')
+  //   window.sessionStorage.setItem('wrong_answers', previousScore > 0 ? previousScore - 1 : 0);
+  // },
 
-  substractRightAnswer: function () {
-    const previousScore = parseInt(localStorage.getItem('right_answers'))
-    localStorage.setItem('right_answers', previousScore > 0 ? previousScore - 1 : 0);
-  },
+  // substractRightAnswer: function () {
+  //   const previousScore = window.sessionStorage.getItem('right_answers')
+  //   window.sessionStorage.setItem('right_answers', previousScore > 0 ? previousScore - 1 : 0);
+  // },
 
   loadRightAnswersScore: function () {
     const wrongAnswersCounter = document.getElementById('wrong_answers');
-    const currentWrongAnswers = localStorage.getItem('wrong_answers');
+    const currentWrongAnswers = window.sessionStorage.getItem('wrong_answers');
     wrongAnswersCounter.innerHTML = currentWrongAnswers;
   },
 
   loadWrongAnswersScore: function () {
     const rightAnswersCounter = document.getElementById('right_answers');
-    const currentRightAnswers = localStorage.getItem('right_answers');
+    const currentRightAnswers = window.sessionStorage.getItem('right_answers');
     rightAnswersCounter.innerHTML = currentRightAnswers;
   },
 
@@ -78,15 +90,15 @@ window.UtilsHandler = {
 
 window.QuestionsHandler = {
   loadCurrentQuestion: function () {
-    localStorage.getItem('current_question');
+    window.sessionStorage.getItem('current_question');
   },
 
   setLastQuestion: function (id, answer) {
-    localStorage.setItem('last_question', { id, answer })
+    window.sessionStorage.setItem('last_question', { id, answer })
   },
 
   getLastQuestion: function () {
-    localStorage.getItem('last_question')
+    window.sessionStorage.getItem('last_question')
   },
 
   revertLastQuestion: function () {

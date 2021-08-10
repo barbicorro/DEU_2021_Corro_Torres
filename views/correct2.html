@@ -14,6 +14,7 @@
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
   </script>
   <title>Aprendiendo a prepararme</title>
+  <script src="../main.js"></script>
 </head>
 
 <body>
@@ -66,12 +67,7 @@
     </div>
   </div>
   <script>
-    var rightAnswersCounter = document.getElementById('right_answers');
-    var wrongAnswersCounter = document.getElementById('wrong_answers');
-
-    rightAnswersCounter.innerHTML =
-      localStorage.getItem('right_answers')
-    wrongAnswersCounter.innerHTML = localStorage.getItem('wrong_answers')
+    ScoreHandler.loadCurrentScore();
   </script>
 </body>
 
