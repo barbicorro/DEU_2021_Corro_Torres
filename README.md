@@ -10,5 +10,6 @@ El objetivo del trabajo es que los niños tomen conciencia acerca de la importan
 
 # Instalación
 
-La aplicación no requiere de ningún tipo de instalación. Una vez descargados los archivos, la aplicación se puede abrir en el navegador accediendo al archivo "index.html".
+La aplicación no requiere de ningún tipo de instalación. Una vez descargados los archivos, ésta se puede abrir en el navegador accediendo al archivo "index.html".
+
 También se puede probar la aplicación desde el siguiente link: https://barbicorro.github.io/DEU_2021_Corro_Torres/index.html.
