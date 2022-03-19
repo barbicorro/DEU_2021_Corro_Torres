@@ -68,36 +68,36 @@
     <div class="main cont--start flex-column container-fluid p-3 cont--max-width">
       <h5 class="pt-3 pb-1">Pregunta 3</h5>
       <h4 class="pt-3 pb-1">
-        En caso de inundación, ¿qué es lo más importante a rescatar? 
+        ¿Qué calzado conviene usar en una situación de emergencia?
       </h4>
       <div class="row d-flex p-5 cont--centered w-100">
         <div class="col-md-4 col-sm-12 card-container">
           <button class="card box-shadow p-3" id="option1">
-            <div class="card-body mb-3 cont--centered w-100">
-              <h4 class="card-title text-center">Ropa</h4>
+            <div class="card-body cont--centered w-100">
+              <h4 class="card-title text-center">Ojotas</h4>
             </div>
             <div class="d-flex align-items-center justify-content-center">
-              <img class="card-img-bottom option" alt="ilustración de ropa" src="../media/answers/clothes.png" />
+              <img class="card-img-bottom option" alt="ilustración de ojotas" src="../media/answers/children-toys.png" />
             </div>
           </button>
         </div>
         <div class="col-md-4 col-sm-12 card-container">
           <button class="card box-shadow p-3" id="option2">
-            <div class="card-body mb-3 cont--centered w-100">
-              <h4 class="card-title text-center">Libros</h4>
+            <div class="card-body cont--centered w-100">
+              <h4 class="card-title text-center">Zapatillas</h4>
             </div>
             <div class="d-flex align-items-center justify-content-center">
-              <img class="card-img-bottom option" alt="ilustración de libros" src="../media/answers/books.png" />
+              <img class="card-img-bottom option" alt="ilustración de zapatillas" src="../media/answers/water.png" />
             </div>
           </button>
         </div>
         <div class="col-md-4 col-sm-12 card-container">
           <button class="card box-shadow p-3" id="option3">
-            <div class="card-body mb-3 cont--centered w-100">
-              <h4 class="card-title text-center">Documentación</h4>
+            <div class="card-body cont--centered w-100">
+              <h4 class="card-title text-center">Sin calzado</h4>
             </div>
             <div class="d-flex align-items-center justify-content-center">
-              <img class="card-img-bottom option" alt="ilustración de documentos" src="../media/answers/documentation.png" />
+              <img class="card-img-bottom option" alt="ilustración de pies descalzos" src="../media/answers/gamepad.png" />
             </div>
           </button>
         </div>
@@ -117,10 +117,13 @@
     </div>
   </div>
   <script>
+
+  </script>
+  <script>
     ScoreHandler.loadCurrentScore();
     EventsHandler.attachEventsToOptionButtons(3, {
-      rightOptionId: 3,
-      wrongOptionsIds: [1, 2]
+      rightOptionId: 2,
+      wrongOptionsIds: [1, 3]
     });
     window.modal.setModal();
   </script>

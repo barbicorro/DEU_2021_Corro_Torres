@@ -62,46 +62,69 @@
             <span class="font-weight-bold"> <i class="fa fa-times" aria-hidden="true"></i> Salir</span>
           </button>
         </div>
+
       </div>
     </nav>
     <div class="main cont--start flex-column container-fluid p-3 cont--max-width">
-      <h5 class="pt-3">Pregunta 3</h5>
-      <h4 class="pt-3 fw-bold">
-        ¿Qué calzado conviene usar en una situación de emergencia?
+      <h5 class="pt-3 pb-1">Pregunta 7</h5>
+      <h4 class="pt-3 pb-1">
+        Si estoy en un lugar con muchas personas y tengo una emergencia, ¿a quién debo buscar?
       </h4>
-      <div class="d-flex flex-column cont--centered w-100">
-        <div class="d-flex flex-column cont--centered w-50 p-2">
-          <h4 class="fw-bold text-success">¡Correcto!</h4>
-          <h4 class="fw-bold pt-3">Zapatillas</h4>
-          <div class="img-container w-100 d-flex cont--centered">
-            <img class="card-img-bottom" alt="ilustración de botella de agua" src="../media/answers/water.png" />
-          </div>
+      <div class="row d-flex p-5 cont--centered w-100">
+        <div class="col-md-4 col-sm-12 card-container">
+          <button class="card box-shadow p-3" id="option1">
+            <div class="card-body cont--centered w-100">
+              <h4 class="card-title text-center">Amigo</h4>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="card-img-bottom option" alt="ilustración de persona amiga" src="../media/answers/children-toys.png" />
+            </div>
+          </button>
         </div>
-        <p class="fs-5 text answer-explanation">
-          Las ojotas pueden hacerte tropezar e ir descalzo es peligroso porque te podés lastimar con cualquier cosa que haya en el piso. Lo mejor es usar unas zapatillas cómodas que te permitan mantenerte ágil durante la emergencia.
-        </p>
+        <div class="col-md-4 col-sm-12 card-container">
+          <button class="card box-shadow p-3" id="option2">
+            <div class="card-body cont--centered w-100">
+              <h4 class="card-title text-center">Desconocido</h4>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="card-img-bottom option" alt="ilustración de persona desconocida" src="../media/answers/water.png" />
+            </div>
+          </button>
+        </div>
+        <div class="col-md-4 col-sm-12 card-container">
+          <button class="card box-shadow p-3" id="option3">
+            <div class="card-body cont--centered w-100">
+              <h4 class="card-title text-center">Familia</h4>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="card-img-bottom option" alt="ilustración de familia" src="../media/answers/gamepad.png" />
+            </div>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="card-footer text-muted p-4 d-flex flex-column justify-content-center align-items-center">
-      <div class="d-flex justify-content-center">
-        <p class="answers-counter">
+    <div class="card-footer text-muted p-4 d-flex justify-content-center">
+      <div class="score">
+        <p>
           <img src="../media/success.png" alt="Correct answer icon" class="icon" />Respuestas correctas:
           <span id="right_answers">0</span>
         </p>
-        <p class="answers-counter">
+        <p>
           <img src="../media/error.png" alt="Wrong answer icon" class="icon" /> Respuestas incorrectas:
           <span id="wrong_answers">0</span>
         </p>
       </div>
-      <button type="button" class="btn button--purple pl-3 pr-3 pb-2"
-        onclick="window.location.href='./question4.html';">
-        <i class="fa fa-arrow-right"></i> Próxima pregunta
-        </a>
-      </button>
     </div>
   </div>
   <script>
+
+  </script>
+  <script>
     ScoreHandler.loadCurrentScore();
+    EventsHandler.attachEventsToOptionButtons(7, {
+      rightOptionId: 3,
+      wrongOptionsIds: [1, 2]
+    });
     window.modal.setModal();
   </script>
 </body>
