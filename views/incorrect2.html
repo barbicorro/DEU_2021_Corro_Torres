@@ -18,6 +18,34 @@
 </head>
 
 <body>
+  <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Cómo jugar?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li> 
+              Vas a ver tres posibles respuestas a una pregunta sobre qué hacer en una situación de emergencia. 
+            </li>
+            <li> 
+              Sólo una de ellas es la correcta.
+            </li>
+            <li> 
+              Si te equivocás, no te preocupes, te vamos a contar cuál era la respuesta correcta para que estés preparado para la próxima.
+            </li>
+            <li> 
+              El objetivo es conseguir el mayor número de respuestas correctas.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="cont">
     <nav class="navbar navbar-light bg-light p-4">
       <div class="container-fluid">
@@ -27,8 +55,8 @@
           <b>Aprendiendo a prepararme</b>
         </a>
         <div class="buttons">
-          <button type="button" class="btn button--purple" data-toggle="modal" data-target="#exampleModal">
-            How to play?
+          <button type="button" class="cta btn button--purple" data-toggle="modal" data-target="#exampleModal">
+            ¿Cómo jugar?
           </button>
           <button type="button" class="btn button--danger" onclick="UtilsHandler.resetGame()">
             <span class="font-weight-bold"> <i class="fa fa-times" aria-hidden="true"></i> Exit</span>
@@ -74,6 +102,7 @@
   </div>
   <script>
     ScoreHandler.loadCurrentScore();
+    window.modal.setModal();
   </script>
 </body>
 

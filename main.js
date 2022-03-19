@@ -27,6 +27,23 @@ window.EventsHandler = {
   }
 };
 
+window.modal = {
+  setModal: function () {
+    let closeModal = document.querySelectorAll(".close")[0];
+    let openModal = document.querySelectorAll(".cta")[0];
+    let modal = document.querySelectorAll(".modal")[0];
+  
+    openModal.addEventListener("click", function(e){
+      e.preventDefault();
+      modal.style.display = "initial";
+    })
+    closeModal.addEventListener("click", function(e){
+      e.preventDefault();
+      modal.style.display = "none";
+    })
+  }
+}
+
 window.ScoreHandler = {
   clearScore: function () {
     window.sessionStorage.clear()
