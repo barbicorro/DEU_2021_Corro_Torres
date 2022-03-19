@@ -94,11 +94,11 @@ window.ScoreHandler = {
     const WRONG_ANSWERS = parseInt(window.sessionStorage.getItem("wrong_answers"));
 
     if (RIGHT_ANSWERS > WRONG_ANSWERS) {
-      textElement.innerHTML = `Well done! You have ${RIGHT_ANSWERS} right answers.`
+      textElement.innerHTML = `¡Bien hecho! Tenés ${RIGHT_ANSWERS} respuestas correctas.`
     } else if (RIGHT_ANSWERS == WRONG_ANSWERS) {
-      textElement.innerHTML = `End of the game!`
+      textElement.innerHTML = `¡Fin del juego!`
     } else {
-      textElement.innerHTML = `Try again! You have ${WRONG_ANSWERS} wrong answers.`
+      textElement.innerHTML = `¡Intentalo otra vez! Tenés ${WRONG_ANSWERS} respuestas incorrectas.`
     }
   }
 };
